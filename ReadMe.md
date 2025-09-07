@@ -1,229 +1,393 @@
-Aetherium：下一代世界构建平台产品需求文档 (PRD)
+# **Worldloom：下一代世界构建平台产品需求文档 (PRD)**
 
-1.0 愿景与战略框架
+## **1.0 愿景与战略框架**
 
-本节旨在确立 Aetherium 项目的核心驱动力与市场定位。文档内容将超越简单的功能罗列，深入定义一个清晰的市场切入点，并构建一套以用户为中心的哲学理念，该理念将作为后续所有产品开发与设计决策的根本指针。
-1.1 产品愿景与指导原则
+本节旨在确立 Worldloom 项目的核心驱动力与市场定位。文档内容将超越简单的功能罗列，深入定义一个清晰的市场切入点，并构建一套以用户为中心的哲学理念，该理念将作为后续所有产品开发与设计决策的根本指针。
 
-产品愿景
+### **1.1 产品愿景与指导原则**
 
-Aetherium 的核心愿景是打造一个极致直观、深度互联且支持无缝协作的世界构建平台。它致力于赋能创作者，使其能够构建鲜活、动态的“生命世界”，而非仅仅是静态的知识库或维基。本平台旨在弥合当前市场中两大主流工具类型之间的鸿沟：一类是功能强大但操作复杂的专业级世界构建软件，另一类是灵活性高但功能泛化的通用型笔记应用。Aetherium 将融合二者之长，为创作者提供一个既专业又灵活的理想环境。
-指导原则
+#### **产品愿景**
+
+Worldloom 的核心愿景是打造一个极致直观、深度互联且支持无缝协作的世界构建平台。它致力于赋能创作者，使其能够构建鲜活、动态的“生命世界”，而非仅仅是静态的知识库或维基。本平台旨在弥合当前市场中两大主流工具类型之间的鸿沟：一类是功能强大但操作复杂的专业级世界构建软件，另一类是灵活性高但功能泛化的通用型笔记应用。Worldloom 将融合二者之长，为创作者提供一个既专业又灵活的理想环境。
+
+#### **指导原则**
 
 为实现上述愿景，产品开发将严格遵循以下三大指导原则：
-1. 流程优于功能 (Flow over Features)：产品的核心竞争力在于提供一种无缝、直观的用户体验。设计将优先保证创作者能够沉浸在“心流”状态中，最大限度地减少操作摩擦和认知负担。这一原则的灵感源于对 LegendKeeper 理念的分析，该平台强调高质量的工作流程而非功能的堆砌 ()。我们将坚决抵制“功能蔓延”（feature creep）的诱惑，避免重蹈 World Anvil 等工具因功能过度复杂而导致“陡峭学习曲线”的覆辙，这一点在用户评论中被反复提及 ()。   
-2. 
-3. 创作者主权 (Creator Sovereignty)：用户的创作数据是其最宝贵的资产。受 Obsidian 本地优先、开放格式理念的启发，Aetherium 将坚定不移地保障用户的数据所有权与便携性 ()。平台的服务条款将明确规定，用户永远是其创作内容的唯一所有者。我们将提供清晰、无障碍的数据导出功能，确保用户在任何时候都能完全掌控自己的数据，杜绝“数据锁定”的风险。   
-4. 互联涌现智能 (Intelligence through Interconnection)：平台的真正力量并非源于孤立的功能模块，而是来自于数据节点之间形成的复杂网络。Aetherium 的目标是成为用户世界的“第二大脑”。通过模仿 Roam Research 和 Obsidian 的“网络化思想”模型，平台将通过双向链接和块引用等机制，帮助用户发现其世界观中自然涌现的、未曾预料的深层联系，从而激发新的创作灵感 ()。   
 
-1.2 竞争格局与市场定位
+1. **流程优于功能 (Flow over Features)**：产品的核心竞争力在于提供一种无缝、直观的用户体验。设计将优先保证创作者能够沉浸在“心流”状态中，最大限度地减少操作摩擦和认知负担。这一原则的灵感源于对 LegendKeeper 理念的分析，该平台强调高质量的工作流程而非功能的堆砌 1。我们将坚决抵制“功能蔓延”（feature creep）的诱惑，避免重蹈 World Anvil 等工具因功能过度复杂而导致“陡峭学习曲线”的覆辙，这一点在用户评论中被反复提及 3。
+2. **创作者主权 (Creator Sovereignty)**：用户的创作数据是其最宝贵的资产。受 Obsidian 本地优先、开放格式理念的启发，Worldloom 将坚定不移地保障用户的数据所有权与便携性 6。平台的服务条款将明确规定，用户永远是其创作内容的唯一所有者。我们将提供清晰、无障碍的数据导出功能，确保用户在任何时候都能完全掌控自己的数据，杜绝“数据锁定”的风险。
+3. **互联涌现智能 (Intelligence through Interconnection)**：平台的真正力量并非源于孤立的功能模块，而是来自于数据节点之间形成的复杂网络。Worldloom 的目标是成为用户世界的“第二大脑”。通过模仿 Roam Research 和 Obsidian 的“网络化思想”模型，平台将通过双向链接和块引用等机制，帮助用户发现其世界观中自然涌现的、未曾预料的深层联系，从而激发新的创作灵感 8。
 
-对当前世界构建工具市场的深入分析揭示了 Aetherium 的战略机遇。现有工具可分为四大类别，每类都有其独特的优势与局限性。
-竞争对手分析
+### **1.2 竞争格局与市场定位**
 
-1. 守成者 (Feature-Dense Platforms) - World Anvil & Campfire
-  - 优势: 这类平台提供了极为丰富、专为世界构建设计的工具集。例如，World Anvil 拥有超过25种预设模板、家族树、外交关系网等专业功能，并围绕社区举办写作挑战等活动以提升用户粘性 ()。Campfire 则以其模块化的购买方式和强大的手稿写作工具吸引了大量小说作者 ()。   
-  - 劣势: 强大的功能带来了极高的复杂性。用户普遍反映 World Anvil 存在“陡峭的学习曲线”和“决策瘫痪”问题，即过多的选项和僵化的模板反而会阻碍创作 ()。其多层级的定价模型也常令用户感到困惑 ()。Campfire 虽然更专注于作者，但其模块化系统如果全数购买，成本可能相当高昂 ()。   
-2. 挑战者 (UX-Focused Platform) - LegendKeeper
-  - 优势: LegendKeeper 将用户体验置于首位，提供了简洁、流畅的界面和高质量的工作流 ()。它支持真正的实时多人协作，并采用简单明了的单一订阅模式，极大地降低了用户的选择成本和使用门槛 ()。   
-  - 劣势: 作为后来者，其功能丰富度不及守成者。例如，时间线等核心功能仍处于开发路线图阶段，尚未正式发布 ()。这使得它对于需要特定高级功能的用户来说吸引力不足。   
-3. 适者 (Flexible Knowledge Bases) - Obsidian & Notion
-  - 优势: 这类工具提供了无与伦比的灵活性。Obsidian 以其本地优先、纯文本（Markdown）存储和强大的双向链接功能，保障了用户数据的绝对所有权和未来的可访问性 ()。Notion 则凭借其强大的数据库和视图功能，成为一个“万能”的工作空间，拥有庞大的模板和插件生态系统 ()。   
-  - 劣势: 它们并非为世界构建量身定制。用户需要投入大量时间和精力进行配置，才能搭建出适合自己的工作流 ()。Notion 的在线依赖和在处理大型数据库时的性能问题也备受诟病 ()，而 Obsidian 的核心功能虽免费，但同步和发布等服务需要额外付费。   
+对当前世界构建工具市场的深入分析揭示了 Worldloom 的战略机遇。现有工具可分为四大类别，每类都有其独特的优势与局限性。
 
-战略定位
+#### **竞争对手分析**
 
-Aetherium 的市场定位是成为一个集大成者，旨在融合上述三类工具的优点，同时规避其缺点。它将提供：
-- 守成者的专业工具集：提供专为世界构建设计的核心功能，如地图、时间线和关系图谱。
-- 挑战者的优雅体验：打造一个简洁、直观、以“心流”为中心的用户界面。
-- 适者的强大架构：采用基于图状数据库的、高度互联的数据模型，赋予用户极大的灵活性和数据所有权。
-当前市场存在一个明显的二元对立：一边是功能丰富但结构僵化、学习成本高的专业工具，另一边是灵活自由但需要用户自行搭建、缺乏专业引导的通用工具。用户在 World Anvil 中感到不知所措 ()，而在 Notion 中又苦于需要从零开始搭建 ()。这种现象揭示了创作者的核心诉求：他们既需要结构化的模板来引导思路，又需要足够的灵活性来避免创作受限。Aetherium 的核心架构——“元素”（Element）及其可定制的属性和视图系统——正是为了解决这一核心矛盾而设计的。它在提供结构化模板的同时，允许用户在一个灵活的、基于图的系统中自由创建和连接信息。   
-表格：竞争对手功能矩阵
+1. **守成者 (Feature-Dense Platforms) \- World Anvil & Campfire**
+  - **优势**: 这类平台提供了极为丰富、专为世界构建设计的工具集。例如，World Anvil 拥有超过25种预设模板、家族树、外交关系网等专业功能，并围绕社区举办写作挑战等活动以提升用户粘性 10。Campfire 则以其模块化的购买方式和强大的手稿写作工具吸引了大量小说作者 4。
+  - **劣势**: 强大的功能带来了极高的复杂性。用户普遍反映 World Anvil 存在“陡峭的学习曲线”和“决策瘫痪”问题，即过多的选项和僵化的模板反而会阻碍创作 3。其多层级的定价模型也常令用户感到困惑 3。Campfire 虽然更专注于作者，但其模块化系统如果全数购买，成本可能相当高昂 18。
+2. **挑战者 (UX-Focused Platform) \- LegendKeeper**
+  - **优势**: LegendKeeper 将用户体验置于首位，提供了简洁、流畅的界面和高质量的工作流 20。它支持真正的实时多人协作，并采用简单明了的单一订阅模式，极大地降低了用户的选择成本和使用门槛 22。
+  - **劣势**: 作为后来者，其功能丰富度不及守成者。例如，时间线等核心功能仍处于开发路线图阶段，尚未正式发布 1。这使得它对于需要特定高级功能的用户来说吸引力不足。
+3. **适者 (Flexible Knowledge Bases) \- Obsidian & Notion**
+  - **优势**: 这类工具提供了无与伦比的灵活性。Obsidian 以其本地优先、纯文本（Markdown）存储和强大的双向链接功能，保障了用户数据的绝对所有权和未来的可访问性 6。Notion 则凭借其强大的数据库和视图功能，成为一个“万能”的工作空间，拥有庞大的模板和插件生态系统 24。
+  - **劣势**: 它们并非为世界构建量身定制。用户需要投入大量时间和精力进行配置，才能搭建出适合自己的工作流 6。Notion 的在线依赖和在处理大型数据库时的性能问题也备受诟病 26，而 Obsidian 的核心功能虽免费，但同步和发布等服务需要额外付费 27。
 
-下表直观地展示了 Aetherium 相对于主要竞争对手的战略定位和独特价值主张。
-暂时无法在Lark文档外展示此内容
+#### **战略定位**
 
-1.3 目标用户画像
+Worldloom 的市场定位是成为一个集大成者，旨在融合上述三类工具的优点，同时规避其缺点。它将提供：
+
+- **守成者的专业工具集**：提供专为世界构建设计的核心功能，如地图、时间线和关系图谱。
+- **挑战者的优雅体验**：打造一个简洁、直观、以“心流”为中心的用户界面。
+- **适者的强大架构**：采用基于图状数据库的、高度互联的数据模型，赋予用户极大的灵活性和数据所有权。
+
+当前市场存在一个明显的二元对立：一边是功能丰富但结构僵化、学习成本高的专业工具，另一边是灵活自由但需要用户自行搭建、缺乏专业引导的通用工具。用户在 World Anvil 中感到不知所措 5，而在 Notion 中又苦于需要从零开始搭建 26。这种现象揭示了创作者的核心诉求：他们既需要结构化的模板来引导思路，又需要足够的灵活性来避免创作受限。Worldloom 的核心架构——“元素”（Element）及其可定制的属性和视图系统——正是为了解决这一核心矛盾而设计的。它在提供结构化模板的同时，允许用户在一个灵活的、基于图的系统中自由创建和连接信息。
+
+#### **表格：竞争对手功能矩阵**
+
+下表直观地展示了 Worldloom 相对于主要竞争对手的战略定位和独特价值主张。
+
+| 功能维度 | World Anvil | Campfire | LegendKeeper | Obsidian | Notion | Worldloom (目标) |
+| --- | --- | --- | --- | --- | --- | --- |
+| **核心工具** | 丰富，模板化 | 丰富，模块化 | 核心，流程化 | 基础，需插件 | 基础，需模板 | **丰富，集成化** |
+| **数据结构** | 预设模板 | 预设模块 | 维基页面 | Markdown 文件 | 数据库/页面 | **原子化“元素”** |
+| **高级链接** | @提及 | 交叉引用 | 自动链接 | **双向链接/块引用** | 关系/链接 | **双向链接/块引用/无链接提及** |
+| **协作模式** | 异步  | 异步  | **实时** | 需插件/第三方 | **实时** | **实时** |
+| **交互式地图** | ✅   | ✅   | ✅   | 需插件 | 需嵌入 | ✅ **(支持图层)** |
+| **关系可视化** | 手动（家族树等） | 手动（关系网） | 白板  | 图形视图 | 需手动 | **程序化生成** |
+| **数据便携性** | HTML/JSON | PDF/EPUB | HTML/JSON | **极高 (Markdown)** | HTML/Markdown/CSV | **极高 (Markdown/HTML/JSON)** |
+| **定价模型** | 复杂多层 | 模块化 | 单一订阅 | 核心免费，服务付费 | 免费增值 | **清晰分层** |
+
+### **1.3 目标用户画像**
 
 为了确保产品设计能够精准满足用户需求，我们定义了以下三类核心用户画像：
-画像一：小说架构师 (The Novel Architect) - 主要目标用户
 
-- 目标：为一部或多部系列小说构建一个有深度、逻辑自洽且可信的世界观。他们希望在一个与世界观设定集无缝连接的环境中直接撰写手稿。
-- 痛点：在多个分散的文档（如Word、Excel、笔记应用）中难以追踪细节，导致前后矛盾 ()；维护角色关系和时间线的连贯性极为困难；被复杂软件的“陡峭学习曲线”劝退 ()；写作工具与世界观设定工具之间缺乏有效集成。   
-- 需求：一个与世界构建文章深度集成的强大手稿写作工具 ()；用于绘制情节、追踪角色弧线的可视化工具 ()；一个能够通过互联网络自动检查并防止设定矛盾的、强大的维基系统 ()。   
+#### **画像一：小说架构师 (The Novel Architect) \- 主要目标用户**
 
-画像二：大师级叙事者 (The Master Storyteller - TTRPG GM) - 主要目标用户
+- **目标**：为一部或多部系列小说构建一个有深度、逻辑自洽且可信的世界观。他们希望在一个与世界观设定集无缝连接的环境中直接撰写手稿。
+- **痛点**：在多个分散的文档（如Word、Excel、笔记应用）中难以追踪细节，导致前后矛盾 8；维护角色关系和时间线的连贯性极为困难；被复杂软件的“陡峭学习曲线”劝退 3；写作工具与世界观设定工具之间缺乏有效集成。
+- **需求**：一个与世界构建文章深度集成的强大手稿写作工具 4；用于绘制情节、追踪角色弧线的可视化工具 29；一个能够通过互联网络自动检查并防止设定矛盾的、强大的维基系统 8。
 
-- 目标：为玩家创造一个可供探索的沉浸式世界；高效管理战役后勤、会话记录和玩家角色卡；能够有选择性地向玩家展示信息，并保守秘密。
-- 痛点：在游戏过程中需要在多个应用（笔记、地图、属性卡）之间频繁切换；担心玩家误看到仅限GM查阅的信息；准备一次游戏会话的内容耗时过长。
-- 需求：一个精细化的权限控制系统和“秘密”功能，允许在同一文档中隐藏部分内容 ()；支持玩家/GM不同视图的交互式地图 ()；支持玩家贡献内容的实时协作功能 ()；以及完善的战役管理工具 ()。   
+#### **画像二：大师级叙事者 (The Master Storyteller \- TTRPG GM) \- 主要目标用户**
 
-画像三：业余编年史家 (The Hobbyist Chronicler) - 次要目标用户
+- **目标**：为玩家创造一个可供探索的沉浸式世界；高效管理战役后勤、会话记录和玩家角色卡；能够有选择性地向玩家展示信息，并保守秘密。
+- **痛点**：在游戏过程中需要在多个应用（笔记、地图、属性卡）之间频繁切换；担心玩家误看到仅限GM查阅的信息；准备一次游戏会话的内容耗时过长。
+- **需求**：一个精细化的权限控制系统和“秘密”功能，允许在同一文档中隐藏部分内容 2；支持玩家/GM不同视图的交互式地图 22；支持玩家贡献内容的实时协作功能 22；以及完善的战役管理工具 10。
 
-- 目标：将世界构建作为一种兴趣爱好、创意输出或与小圈子分享的方式。
-- 痛点：专业工具的付费门槛过高；许多平台的免费版本默认将所有内容公开，缺乏隐私性 ()；面对过于复杂的系统时感到无所适从。   
-- 需求：一个功能强大且允许创建私密项目的免费版本（这将是与World Anvil免费版的关键区别）；一个直观、友好的用户入门体验；能够提供灵感和社交连接的社区功能 ()。   
+#### **画像三：业余编年史家 (The Hobbyist Chronicler) \- 次要目标用户**
+
+- **目标**：将世界构建作为一种兴趣爱好、创意输出或与小圈子分享的方式。
+- **痛点**：专业工具的付费门槛过高；许多平台的免费版本默认将所有内容公开，缺乏隐私性 3；面对过于复杂的系统时感到无所适从。
+- **需求**：一个功能强大且允许创建私密项目的免费版本（这将是与World Anvil免费版的关键区别）；一个直观、友好的用户入门体验；能够提供灵感和社交连接的社区功能 11。
 
 ---
 
-2.0 核心平台架构与概念
+## **2.0 核心平台架构与概念**
 
-本节将定义 Aetherium 的基础数据模型。这是整个产品需求文档中最为关键的部分，它不仅确立了技术实现的基础，也奠定了产品哲学的基石，所有功能都将围绕此架构展开。
-2.1 原子化单位：“元素” (The "Element")
+本节将定义 Worldloom 的基础数据模型。这是整个产品需求文档中最为关键的部分，它不仅确立了技术实现的基础，也奠定了产品哲学的基石，所有功能都将围绕此架构展开。
 
-“元素”是 Aetherium 中所有内容的基础构建单元。它是一个灵活的、类似数据库条目的对象，可以代表用户世界中的任何事物：一个角色、一个地点、一个物种、一种魔法体系、一桩历史事件等。这种设计理念深受 Notion 数据库页面的启发，即每个数据库条目本身就是一个功能齐全、可独立编辑的页面，并附带有结构化的属性 ()。   
+### **2.1 原子化单位：“元素” (The "Element")**
+
+“元素”是 Worldloom 中所有内容的基础构建单元。它是一个灵活的、类似数据库条目的对象，可以代表用户世界中的任何事物：一个角色、一个地点、一个物种、一种魔法体系、一桩历史事件等。这种设计理念深受 Notion 数据库页面的启发，即每个数据库条目本身就是一个功能齐全、可独立编辑的页面，并附带有结构化的属性 30。
+
 每个“元素”都由两部分组成：
-1. 主内容区：采用下文详述的“Aetherium 编辑器”（见3.1节），提供丰富的文本和媒体编辑功能。
-2. 可定制属性集：一套用户可以自定义的字段，用于结构化地描述该“元素”。属性的类型多样，包括文本、数字、日期、单选、多选、关系（用于链接其他“元素”）、URL、图片等。这种设计兼顾了 World Anvil 等专业工具的结构化优势和 Notion 的高度可定制性 ()。   
 
-2.2 互联图谱：网络化思想的力量
+1. **主内容区**：采用下文详述的“Worldloom 编辑器”（见3.1节），提供丰富的文本和媒体编辑功能。
+2. **可定制属性集**：一套用户可以自定义的字段，用于结构化地描述该“元素”。属性的类型多样，包括文本、数字、日期、单选、多选、关系（用于链接其他“元素”）、URL、图片等。这种设计兼顾了 World Anvil 等专业工具的结构化优势和 Notion 的高度可定制性 10。
 
-Aetherium 的核心架构优势在于，它不是一个由孤立页面组成的集合，而是一个由相互连接的“元素”构成的图状数据库。这使得整个世界观成为一个动态的、可探索的知识网络。
-- 双向链接 (Bi-Directional Linking)：当用户在“元素B”的内容中通过 [[元素A]] 的语法链接到“元素A”时，系统会自动在“元素A”的页面底部生成一个反向链接，清晰地展示出“元素B”中的这次引用。这一功能直接借鉴了 Obsidian 和 Roam Research 的核心机制 ()，它允许用户在写作过程中自然地构建联系，并在日后通过这些联系发现意想不到的创意火花。此外，系统还将支持“无链接提及”（unlinked mentions）功能，即使用户只是输入了某个元素的名称但未创建正式链接，系统也能识别并提示用户建立连接 ()。   
-- 块引用与嵌入 (Block Referencing & Transclusion)：Aetherium 的引用粒度将深入到“块”级别。用户不仅可以引用整个“元素”，还可以通过 ((块ID)) 这样的语法，精确地引用另一个“元素”中的任意一个段落、列表项或图片。这个被引用的“块”可以被“嵌入”（transclusion）到任意数量的其他“元素”中。
-- 这种设计模式是解决创作者“矛盾危机”（contradiction crisis）的根本性方案 ()。例如，创作者可以在一个专门的“预言”元素中写下一段关键预言，然后将这个预言“块”嵌入到十几个相关的角色、地点和历史事件的页面中。当创作者需要修改这段预言时，只需在源头进行编辑，所有嵌入该“块”的地方都会瞬间同步更新。这彻底解决了传统创作流程中因复制粘贴而导致的信息不一致和维护困难的问题。   
-- 虽然 World Anvil 等工具支持文章层面的嵌入 ()，但 Roam 和 Obsidian 的实践已经证明了“块”级别粒度的巨大威力 ()。通过采用块引用，Aetherium 将创作者的工作模式从以“文档”为中心，转变为以“思想”或“概念”为中心，这更符合创作者的非线性思维习惯，使得知识的组合与重构变得极为流畅和模块化。   
+### **2.2 互联图谱：网络化思想的力量**
 
-2.3 视图：观察世界的不同棱镜
+Worldloom 的核心架构优势在于，它不是一个由孤立页面组成的集合，而是一个由相互连接的“元素”构成的图状数据库。这使得整个世界观成为一个动态的、可探索的知识网络。
 
-“视图”（View）是对一组“元素”集合进行动态、可定制化呈现的方式。这一概念直接源自 Notion () 和 Airtable () 中极其强大的数据库视图功能。   
+- **双向链接 (Bi-Directional Linking)**：当用户在“元素B”的内容中通过 \[\[元素A\]\] 的语法链接到“元素A”时，系统会自动在“元素A”的页面底部生成一个反向链接，清晰地展示出“元素B”中的这次引用。这一功能直接借鉴了 Obsidian 和 Roam Research 的核心机制 8，它允许用户在写作过程中自然地构建联系，并在日后通过这些联系发现意想不到的创意火花。此外，系统还将支持“无链接提及”（unlinked mentions）功能，即使用户只是输入了某个元素的名称但未创建正式链接，系统也能识别并提示用户建立连接 33。
+- **块引用与嵌入 (Block Referencing & Transclusion)**：Worldloom 的引用粒度将深入到“块”级别。用户不仅可以引用整个“元素”，还可以通过 ((块ID)) 这样的语法，精确地引用另一个“元素”中的任意一个段落、列表项或图片。这个被引用的“块”可以被“嵌入”（transclusion）到任意数量的其他“元素”中。  
+  这种设计模式是解决创作者“矛盾危机”（contradiction crisis）的根本性方案 8。例如，创作者可以在一个专门的“预言”元素中写下一段关键预言，然后将这个预言“块”嵌入到十几个相关的角色、地点和历史事件的页面中。当创作者需要修改这段预言时，只需在源头进行编辑，所有嵌入该“块”的地方都会瞬间同步更新。这彻底解决了传统创作流程中因复制粘贴而导致的信息不一致和维护困难的问题。  
+  虽然 World Anvil 等工具支持文章层面的嵌入 34，但 Roam 和 Obsidian 的实践已经证明了“块”级别粒度的巨大威力 35。通过采用块引用，Worldloom 将创作者的工作模式从以“文档”为中心，转变为以“思想”或“概念”为中心，这更符合创作者的非线性思维习惯，使得知识的组合与重构变得极为流畅和模块化。
+
+### **2.3 视图：观察世界的不同棱镜**
+
+“视图”（View）是对一组“元素”集合进行动态、可定制化呈现的方式。这一概念直接源自 Notion 37 和 Airtable 41 中极其强大的数据库视图功能。
+
 用户可以为同一组“元素”创建多个不同的视图，以满足不同的分析和管理需求。例如，对于一个包含所有“角色”元素的集合，用户可以创建以下视图：
-- 表格视图 (Table View)：以电子表格的形式展示所有角色，便于横向比较年龄、阵营、状态等属性。
-- 画廊视图 (Gallery View)：以卡片网格的形式展示，每张卡片突出显示角色的肖像和关键信息，适合进行视觉化浏览。
-- 看板视图 (Board View)：以看板的形式，根据角色的“开发状态”属性（如“构思中”、“草稿”、“已定稿”）进行分组，直观地追踪每个角色的创作进度。
-- 时间线视图 (Timeline View)：根据角色的“出生日期”属性，将所有角色绘制在一个时间轴上，清晰地展示代际关系。
+
+- **表格视图 (Table View)**：以电子表格的形式展示所有角色，便于横向比较年龄、阵营、状态等属性。
+- **画廊视图 (Gallery View)**：以卡片网格的形式展示，每张卡片突出显示角色的肖像和关键信息，适合进行视觉化浏览。
+- **看板视图 (Board View)**：以看板的形式，根据角色的“开发状态”属性（如“构思中”、“草稿”、“已定稿”）进行分组，直观地追踪每个角色的创作进度。
+- **时间线视图 (Timeline View)**：根据角色的“出生日期”属性，将所有角色绘制在一个时间轴上，清晰地展示代际关系。
+
 每个视图都将拥有独立的筛选、排序和分组选项，允许用户创建高度定制化的仪表盘，以全新的视角审视和管理自己的世界。
 
 ---
 
-3.0 核心功能集：创作者的工具箱
+## **3.0 核心功能集：创作者的工具箱**
 
 本节详细阐述用户将直接交互的核心工具。每个工具的设计都力求达到行业顶尖水平，并与第二节中阐述的核心架构概念深度融合。
-3.1 Aetherium 编辑器
 
-Aetherium 将提供一个现代化的、基于块的富文本编辑器，其核心设计目标是提供一个如 Obsidian 和 LegendKeeper 般简洁、无干扰的写作环境 ()。   
-- 核心功能：编辑器将支持所有标准的格式化选项，包括多级标题、粗体、斜体、列表、表格、高亮块（callouts）和代码块。其底层将采用通用的 Markdown 格式，以确保数据的便携性，但会提供一个完全所见即所得（WYSIWYG）的界面，让用户无需记忆语法即可轻松使用 ()。   
-- 图谱集成：编辑体验将与平台的核心图谱架构无缝集成：
-  - @ 提及：输入 @ 符号将立即弹出一个搜索框，用户可以快速搜索并链接到世界中的任何其他“元素”，从而创建一个双向链接。这是对 World Anvil 链接系统更为直观和高效的实现 ()。   
-  - (( 块引用：输入 (( 符号将允许用户搜索并嵌入来自任何其他“元素”的特定“块”，实现内容的实时嵌入（transclusion）()。   
-  - / 斜杠命令：借鉴 Notion 和 Roam 的成功经验，输入 / 将唤出一个命令菜单，用户可以通过它快速插入各种内容块、嵌入媒体、应用模板或执行其他高级功能 ()。   
+### **3.1 Worldloom 编辑器**
 
-3.2 元素模板
+Worldloom 将提供一个现代化的、基于块的富文本编辑器，其核心设计目标是提供一个如 Obsidian 和 LegendKeeper 般简洁、无干扰的写作环境 2。
+
+- **核心功能**：编辑器将支持所有标准的格式化选项，包括多级标题、粗体、斜体、列表、表格、高亮块（callouts）和代码块。其底层将采用通用的 Markdown 格式，以确保数据的便携性，但会提供一个完全所见即所得（WYSIWYG）的界面，让用户无需记忆语法即可轻松使用 6。
+- **图谱集成**：编辑体验将与平台的核心图谱架构无缝集成：
+  - **@ 提及**：输入 @ 符号将立即弹出一个搜索框，用户可以快速搜索并链接到世界中的任何其他“元素”，从而创建一个双向链接。这是对 World Anvil 链接系统更为直观和高效的实现 46。
+  - **(( 块引用**：输入 (( 符号将允许用户搜索并嵌入来自任何其他“元素”的特定“块”，实现内容的实时嵌入（transclusion）47。
+  - **/ 斜杠命令**：借鉴 Notion 和 Roam 的成功经验，输入 / 将唤出一个命令菜单，用户可以通过它快速插入各种内容块、嵌入媒体、应用模板或执行其他高级功能 30。
+
+### **3.2 元素模板**
 
 系统将提供一个强大而灵活的模板功能，用于创建、保存和分享不同类型“元素”的结构。这旨在满足用户对结构化内容的需求，同时避免了固定模板的僵化。
-- 功能：用户可以自由创建自己的模板。例如，一个“角色模板”可以预设“属性”、“背景故事”、“人际关系”等属性字段。用户也可以直接使用平台提供的官方预设模板，这些模板将涵盖世界构建的常见类别 ()。   
-- 社区共享：所有用户创建的模板都可以选择性地发布到“社区中心”（详见4.3节）。这将催生一个由用户生成内容（UGC）驱动的模板市场，类似于 Notion 庞大的模板生态系统，为新用户提供巨大的价值和便利 ()。   
 
-3.3 阿特拉斯引擎（交互式地图）
+- **功能**：用户可以自由创建自己的模板。例如，一个“角色模板”可以预设“属性”、“背景故事”、“人际关系”等属性字段。用户也可以直接使用平台提供的官方预设模板，这些模板将涵盖世界构建的常见类别 48。
+- **社区共享**：所有用户创建的模板都可以选择性地发布到“社区中心”（详见4.3节）。这将催生一个由用户生成内容（UGC）驱动的模板市场，类似于 Notion 庞大的模板生态系统，为新用户提供巨大的价值和便利 24。
 
-阿特拉斯引擎是 Aetherium 的核心可视化工具之一，旨在提供行业领先的交互式地图体验。
-- 功能：用户可以上传高达100MB的高分辨率图片作为地图，这一标准看齐了以地图功能著称的 LegendKeeper ()。   
-- 图层系统：支持多图层功能，用户可以创建并独立开关不同图层（例如，政治疆域图、地形图、资源分布图）。这是一个在竞争对手的路线图中被提及，但尚未普遍实现的高级功能 ()。   
-- 交互式图钉：用户可以在地图上放置可自定义图标和颜色的图钉。每个图钉都直接链接到一个“元素”。点击图钉会弹出一个该元素的预览卡片，或直接跳转到其完整页面。
-- 嵌套地图：世界地图上的一个图钉可以链接到一个区域地图，区域地图上的图钉又可以链接到一个城市地图，以此类推，实现从宏观到微观的无缝缩放浏览体验 ()。   
+### **3.3 阿特拉斯引擎（交互式地图）**
 
-3.4 柯罗诺斯引擎（时间线）
+阿特拉斯引擎是 Worldloom 的核心可视化工具之一，旨在提供行业领先的交互式地图体验。
+
+- **功能**：用户可以上传高达100MB的高分辨率图片作为地图，这一标准看齐了以地图功能著称的 LegendKeeper 22。
+- **图层系统**：支持多图层功能，用户可以创建并独立开关不同图层（例如，政治疆域图、地形图、资源分布图）。这是一个在竞争对手的路线图中被提及，但尚未普遍实现的高级功能 22。
+- **交互式图钉**：用户可以在地图上放置可自定义图标和颜色的图钉。每个图钉都直接链接到一个“元素”。点击图钉会弹出一个该元素的预览卡片，或直接跳转到其完整页面。
+- **嵌套地图**：世界地图上的一个图钉可以链接到一个区域地图，区域地图上的图钉又可以链接到一个城市地图，以此类推，实现从宏观到微观的无缝缩放浏览体验 16。
+
+### **3.4 柯罗诺斯引擎（时间线）**
 
 柯罗诺斯引擎是一个可视化的、交互式的时间线工具，用于梳理和呈现世界的历史脉络。
-- 功能：用户可以将“事件”（本身也是一种“元素”）放置到一个或多个时间线上。系统将支持并列时间线，便于用户同时追踪不同国家或角色的历史进程。此外，它还支持自定义纪元和历法系统，以适应各种奇幻或科幻设定 ()。   
-- 动态弧线可视化：此功能是柯罗诺斯引擎的一大创新。借鉴 Campfire 的“弧线”模块概念 ()，用户可以在创建“事件”元素时，为其添加与特定角色或势力的关联标签。基于这些标签数据，时间线工具能够自动生成一条可视化的曲线图，直观地展示该角色或势力在历史长河中的兴衰起伏、状态变化，为叙事分析提供了强大的可视化支持。   
 
-3.5 星宿织网者（关系图谱）
+- **功能**：用户可以将“事件”（本身也是一种“元素”）放置到一个或多个时间线上。系统将支持并列时间线，便于用户同时追踪不同国家或角色的历史进程。此外，它还支持自定义纪元和历法系统，以适应各种奇幻或科幻设定 45。
+- **动态弧线可视化**：此功能是柯罗诺斯引擎的一大创新。借鉴 Campfire 的“弧线”模块概念 29，用户可以在创建“事件”元素时，为其添加与特定角色或势力的关联标签。基于这些标签数据，时间线工具能够自动生成一条可视化的曲线图，直观地展示该角色或势力在历史长河中的兴衰起伏、状态变化，为叙事分析提供了强大的可视化支持。
 
-“星宿织网者”是 Aetherium 最具创新性的功能之一，它将关系的可视化从一项繁琐的手工任务转变为一种自动化的、智能的探索过程。
-- 程序化生成：World Anvil 和 Campfire 等平台提供了手动的家族树和外交关系网工具，用户需要手动拖拽节点和连线 ()。这种方式不仅耗时，而且难以维护。Aetherium 将彻底改变这一工作流。用户只需在“元素”的属性中定义关系即可（例如，在“角色A”的“父母”关系属性中链接到“角色B”和“角色C”；在“国家X”的“盟友”关系属性中链接到“国家Y”）。“星宿织网者”会读取整个世界图谱中的这些结构化数据，并   
-- 程序化地生成一个可交互的、力导向的图谱。这不仅为用户节省了大量时间，更重要的是确保了关系图的可视化呈现永远与底层数据保持实时同步。
-- 功能：该工具将提供多种布局算法以适应不同场景（如用于血缘关系的树状布局，用于派系关系的圆形布局）。用户可以对图谱进行筛选（例如，只显示“敌对”关系），点击图谱中的节点可以直接跳转到对应的“元素”页面，并可以手动微调布局以获得最佳视觉效果。技术实现上，可以借鉴 React Flow 等现代图表库，并针对大规模节点（例如数千个角色）进行性能优化 ()。   
+### **3.5 星宿织网者（关系图谱）**
 
-3.6 画布（白板）
+“星宿织网者”是 Worldloom 最具创新性的功能之一，它将关系的可视化从一项繁琐的手工任务转变为一种自动化的、智能的探索过程。
 
-画布功能是一个无限大的、自由形态的白板空间，专为头脑风暴和非结构化思考而设计，其灵感来源于 Obsidian Canvas () 和 LegendKeeper Boards ()。   
-- 功能：用户可以在画布上自由创建文本便签、插入图片，以及最重要的——从他们的世界中拖入代表“元素”的卡片。
-- 应用场景：用户可以通过绘制线条和连接器来组织这些卡片和便签，从而创建情绪板、情节大纲、流程图和思维导图。这个功能完美地服务于创作的早期阶段，满足了视觉型思考者的需求，并为那些尚未成型的、混乱的想法提供了一个安放之所。
+- **程序化生成**：World Anvil 和 Campfire 等平台提供了手动的家族树和外交关系网工具，用户需要手动拖拽节点和连线 10。这种方式不仅耗时，而且难以维护。Worldloom 将彻底改变这一工作流。用户只需在“元素”的属性中定义关系即可（例如，在“角色A”的“父母”关系属性中链接到“角色B”和“角色C”；在“国家X”的“盟友”关系属性中链接到“国家Y”）。“星宿织网者”会读取整个世界图谱中的这些结构化数据，并  
+  **程序化地**生成一个可交互的、力导向的图谱。这不仅为用户节省了大量时间，更重要的是确保了关系图的可视化呈现永远与底层数据保持实时同步。
+- **功能**：该工具将提供多种布局算法以适应不同场景（如用于血缘关系的树状布局，用于派系关系的圆形布局）。用户可以对图谱进行筛选（例如，只显示“敌对”关系），点击图谱中的节点可以直接跳转到对应的“元素”页面，并可以手动微调布局以获得最佳视觉效果。技术实现上，可以借鉴 React Flow 等现代图表库，并针对大规模节点（例如数千个角色）进行性能优化 54。
+
+### **3.6 画布（白板）**
+
+画布功能是一个无限大的、自由形态的白板空间，专为头脑风暴和非结构化思考而设计，其灵感来源于 Obsidian Canvas 6 和 LegendKeeper Boards 2。
+
+- **功能**：用户可以在画布上自由创建文本便签、插入图片，以及最重要的——从他们的世界中拖入代表“元素”的卡片。
+- **应用场景**：用户可以通过绘制线条和连接器来组织这些卡片和便签，从而创建情绪板、情节大纲、流程图和思维导图。这个功能完美地服务于创作的早期阶段，满足了视觉型思考者的需求，并为那些尚未成型的、混乱的想法提供了一个安放之所。
 
 ---
 
-4.0 协作与社区功能
+## **4.0 协作与社区功能**
 
-本节聚焦于将 Aetherium 打造成一个真正的“多人游戏”体验。实时协作是当前市场领导者的一个明显短板，也是 Aetherium 可以创造巨大附加值的关键领域。
-4.1 实时协作
+本节聚焦于将 Worldloom 打造成一个真正的“多人游戏”体验。实时协作是当前市场领导者的一个明显短板，也是 Worldloom 可以创造巨大附加值的关键领域。
 
-- 需求：平台所有的核心编辑界面——包括 Aetherium 编辑器、阿特拉斯引擎（地图）、画布等——都必须支持与 Google Docs 或 Figma 相媲美的实时、同步、多人协作。这意味着多个用户的光标和选择区域应能同时在屏幕上显示，并实时反映他们的操作。
-- 技术考量：实现这一功能需要一个复杂的后端架构。业界主流的解决方案是采用无冲突复制数据类型（CRDTs）或操作转换（Operational Transforms, OT）算法来处理并发编辑，确保在多用户同时操作时不会发生数据冲突或丢失 ()。虽然这是一项重大的技术投资，但它将构成对 World Anvil 等平台异步协作模式 () 的压倒性竞争优势。   
+### **4.1 实时协作**
 
-4.2 访问控制与权限管理
+- **需求**：平台所有的核心编辑界面——包括 Worldloom 编辑器、阿特拉斯引擎（地图）、画布等——都必须支持与 Google Docs 或 Figma 相媲美的实时、同步、多人协作。这意味着多个用户的光标和选择区域应能同时在屏幕上显示，并实时反映他们的操作。
+- **技术考量**：实现这一功能需要一个复杂的后端架构。业界主流的解决方案是采用无冲突复制数据类型（CRDTs）或操作转换（Operational Transforms, OT）算法来处理并发编辑，确保在多用户同时操作时不会发生数据冲突或丢失 58。虽然这是一项重大的技术投资，但它将构成对 World Anvil 等平台异步协作模式 23 的压倒性竞争优势。
 
-Aetherium 需要一个粒度精细、层级清晰的权限系统，其设计将借鉴 Figma () 和 Notion () 等成熟协作工具的最佳实践。   
-- 角色定义：
-  - 所有者 (Owner)：对世界拥有完全的管理权限，包括内容、成员和计费。
-  - 编辑者 (Editor)：可以创建和编辑世界内的所有内容。
-  - 评论者 (Commenter)：可以查看内容并发表评论，但不能直接编辑。
-  - 查看者 (Viewer)：仅拥有只读权限。
-- “秘密”系统：受 LegendKeeper 的启发 ()，平台将提供一个“秘密”功能。用户可以将任何内容“块”（一个段落、一张图片、一个列表项）标记为“秘密”。被标记的内容将对“查看者”权限的用户自动隐藏。这一功能对于 TTRPG GM 来说至关重要，它允许他们在与玩家共享的同一份文档中，无缝地嵌入只有自己可见的笔记和提示。   
-- 公共分享：用户可以为他们的世界（或世界中的特定部分）生成一个公开的、只读的链接。这使得创作者可以轻松地将他们的世界构建成果作为一个公开的维基网站与读者或粉丝分享。
+### **4.2 访问控制与权限管理**
 
-4.3 社区中心
+Worldloom 需要一个粒度精细、层级清晰的权限系统，其设计将借鉴 Figma 61 和 Notion 64 等成熟协作工具的最佳实践。
 
-社区中心是 Aetherium 从一个工具转变为一个生态系统的关键。它旨在促进用户间的交流、分享与共创。
-- 模板市场：平台将设立一个专门的区域，用户可以在此发布、分享和下载他们自己创建的“元素”模板、世界架构模板，甚至是完整的世界观框架 ()。这不仅能极大地丰富平台资源，为新用户提供宝贵的起点，还能有效促进社区的活跃度和用户粘性，形成类似 Notion 模板市场的良性生态 ()。   
-- 灵感与挑战：平台将定期举办官方的写作提示和世界构建挑战赛，类似于 World Anvil 的社区活动 ()。这些活动旨在激发用户的创作热情，促进社区成员之间的互动与交流。   
-- 功能建议与悬赏看板：
+- **角色定义**：
+  - **所有者 (Owner)**：对世界拥有完全的管理权限，包括内容、成员和计费。
+  - **编辑者 (Editor)**：可以创建和编辑世界内的所有内容。
+  - **评论者 (Commenter)**：可以查看内容并发表评论，但不能直接编辑。
+  - **查看者 (Viewer)**：仅拥有只读权限。
+- **“秘密”系统**：受 LegendKeeper 的启发 2，平台将提供一个“秘密”功能。用户可以将任何内容“块”（一个段落、一张图片、一个列表项）标记为“秘密”。被标记的内容将对“查看者”权限的用户自动隐藏。这一功能对于 TTRPG GM 来说至关重要，它允许他们在与玩家共享的同一份文档中，无缝地嵌入只有自己可见的笔记和提示。
+- **公共分享**：用户可以为他们的世界（或世界中的特定部分）生成一个公开的、只读的链接。这使得创作者可以轻松地将他们的世界构建成果作为一个公开的维基网站与读者或粉丝分享。
+
+### **4.3 社区中心**
+
+社区中心是 Worldloom 从一个工具转变为一个生态系统的关键。它旨在促进用户间的交流、分享与共创。
+
+- **模板市场**：平台将设立一个专门的区域，用户可以在此发布、分享和下载他们自己创建的“元素”模板、世界架构模板，甚至是完整的世界观框架 48。这不仅能极大地丰富平台资源，为新用户提供宝贵的起点，还能有效促进社区的活跃度和用户粘性，形成类似 Notion 模板市场的良性生态 24。
+- **灵感与挑战**：平台将定期举办官方的写作提示和世界构建挑战赛，类似于 World Anvil 的社区活动 11。这些活动旨在激发用户的创作热情，促进社区成员之间的互动与交流。
+- **功能建议与悬赏看板**：
   - 为了让社区能够直接驱动产品的发展方向，我们将建立一个透明的功能建议看板。用户可以在此提交新功能的想法，并通过投票系统来表达社区的集体意愿。
-  - 更进一步，Aetherium 将引入一种创新的混合开发模式。借鉴开源项目的成功经验 ()，平台可以对社区呼声最高的功能设置官方“悬赏”。这允许具备开发能力的社区成员通过类似 GitHub 的“Fork 与 Pull Request”模式 () 贡献代码，以换取平台积分、订阅时长或现金奖励。这种模式不仅能显著加快产品的迭代速度，还能构建一个高度投入的核心用户社区，并从中发掘潜在的技术人才。   
-  - 
+  - 更进一步，Worldloom 将引入一种创新的混合开发模式。借鉴开源项目的成功经验 67，平台可以对社区呼声最高的功能设置官方“悬赏”。这允许具备开发能力的社区成员通过类似 GitHub 的“Fork 与 Pull Request”模式 72 贡献代码，以换取平台积分、订阅时长或现金奖励。这种模式不仅能显著加快产品的迭代速度，还能构建一个高度投入的核心用户社区，并从中发掘潜在的技术人才。
 
 ---
 
-5.0 平台与用户体验
+## **5.0 平台与用户体验**
 
-本节详述了产品中非功能性的、但对用户采纳和留存至关重要的方面。这些体验设计将共同确保 Aetherium 不仅功能强大，而且易于上手、值得信赖。
-5.1 用户引导与激活
+本节详述了产品中非功能性的、但对用户采纳和留存至关重要的方面。这些体验设计将共同确保 Worldloom 不仅功能强大，而且易于上手、值得信赖。
 
-对于功能强大的世界构建工具而言，最大的挑战往往是其陡峭的学习曲线 ()。因此，用户引导（Onboarding）本身必须被视为产品的核心功能之一，其打磨程度将直接决定产品的成败。   
-我们将借鉴 Duolingo 等产品的成功 onboarding 模式 ()，其核心在于延迟注册、个性化引导和游戏化激励，目标是在用户注册前就让他们体验到产品的核心价值——即“Aha!”时刻。   
-- 引导流程设计：
-  1. 欢迎与目标设定：新用户首次访问时，会看到一个简洁而引人入胜的欢迎界面。界面会通过几个简单问题了解用户的创作目标（写小说、跑团、个人爱好）和经验水平，为后续的个性化引导提供依据 ()。   
-  2. 交互式教程（创建第一个“元素”）：摒弃被动的视频教程，我们将引导用户通过一个交互式的清单和动态提示，亲手创建他们的第一个“角色”元素。教程将指导他们为角色命名，并链接到一个即时创建的“地点”元素，让他们亲眼见证双向链接的自动生成。
-  3. 体验“Aha!”时刻：接着，教程会引导用户进入“阿特拉斯引擎”，在地图上为刚刚创建的地点放置一个图钉。最后，用户将被带到“星宿织网者”界面，看到他们的两个元素已经作为一个相互连接的图谱节点被可视化出来。这个流程将在五分钟内完整展示 Aetherium 的核心价值主张：结构化录入、网络化连接和智能化呈现。
-  4. 游戏化机制：整个引导过程将贯穿游戏化元素，如进度条、成就通知（例如，“第一个元素已创建！”）和一个清晰的引导清单，以维持用户的参与感和动力 ()。   
-  5. 延迟注册：只有在用户完整体验了上述核心价值并保存进度时，系统才会提示他们创建账户。这一策略已被证明能显著提高注册转化率 ()。   
+### **5.1 用户引导与激活**
 
-5.2 数据便携性与知识产权
+对于功能强大的世界构建工具而言，最大的挑战往往是其陡峭的学习曲线 3。因此，用户引导（Onboarding）本身必须被视为产品的核心功能之一，其打磨程度将直接决定产品的成败。
 
-- 数据导入/导出：
-  - 导入：为了方便用户从其他工具迁移，平台将提供一个用户友好的 CSV 导入流程。该流程将包括列映射、数据格式验证和错误预览等功能，以简化数据清洗过程 ()。同时，我们还将为来自 Obsidian 的用户提供专门的 Markdown 批量导入工具。   
-  - 导出：用户必须能够在任何时候、以任何理由导出其世界的全部数据。我们将支持 Markdown、HTML 和 JSON 三种主流格式。导出文件将是一个结构化的 ZIP 压缩包，完整保留用户的目录结构和所有上传的媒体资源。这是对用户数据主权的承诺，也是对社区中普遍存在的“数据锁定”担忧的直接回应 ()。   
-- 知识产权政策：
-  - 平台的服务条款将以最清晰、最明确的语言声明：用户拥有其内容的全部所有权。Aetherium 对用户的原创作品不主张任何所有权。授予平台的许可仅限于运营服务所必需的范围（例如，存储、显示和处理用户数据以便在平台内提供服务）。这一政策将完全看齐 Medium、Substack 等创作者友好型平台，建立用户对平台的长期信任 ()。   
+我们将借鉴 Duolingo 等产品的成功 onboarding 模式 74，其核心在于延迟注册、个性化引导和游戏化激励，目标是在用户注册前就让他们体验到产品的核心价值——即“Aha\!”时刻。
 
-5.3 版本控制
+- **引导流程设计**：
+  1. **欢迎与目标设定**：新用户首次访问时，会看到一个简洁而引人入胜的欢迎界面。界面会通过几个简单问题了解用户的创作目标（写小说、跑团、个人爱好）和经验水平，为后续的个性化引导提供依据 76。
+  2. **交互式教程（创建第一个“元素”）**：摒弃被动的视频教程，我们将引导用户通过一个交互式的清单和动态提示，亲手创建他们的第一个“角色”元素。教程将指导他们为角色命名，并链接到一个即时创建的“地点”元素，让他们亲眼见证双向链接的自动生成。
+  3. **体验“Aha\!”时刻**：接着，教程会引导用户进入“阿特拉斯引擎”，在地图上为刚刚创建的地点放置一个图钉。最后，用户将被带到“星宿织网者”界面，看到他们的两个元素已经作为一个相互连接的图谱节点被可视化出来。这个流程将在五分钟内完整展示 Worldloom 的核心价值主张：结构化录入、网络化连接和智能化呈现。
+  4. **游戏化机制**：整个引导过程将贯穿游戏化元素，如进度条、成就通知（例如，“第一个元素已创建！”）和一个清晰的引导清单，以维持用户的参与感和动力 79。
+  5. **延迟注册**：只有在用户完整体验了上述核心价值并保存进度时，系统才会提示他们创建账户。这一策略已被证明能显著提高注册转化率 78。
 
-- 需求：平台内的每一个“元素”都将拥有完整的版本历史记录。系统会在用户编辑过程中自动保存更改快照。
-- 用户界面与体验：版本历史界面的设计将借鉴 Google Docs () 和 Figma () 的成熟实践，为用户提供以下功能：   
-  - 时间线视图：清晰地展示所有历史版本的时间线，并标注每次修改的作者和时间。
-  - 差异对比：提供一个“差异”（diff）视图，允许用户直观地比较任意两个版本之间的区别，新增内容和删除内容将以不同颜色高亮显示 ()。   
-  - 命名版本：用户可以为重要的里程碑版本命名，例如“初稿完成版”或“编辑前版本”，以便快速查找。
-  - 一键恢复：用户可以随时选择任何一个历史版本，并一键将其恢复为当前版本。
-  - 价值：这一功能为创作者提供了一个强大的安全网，尤其是在多人协作的环境中。它消除了用户对丢失工作或做出无法挽回的修改的恐惧，从而鼓励更大胆的创作和实验。这是一个专业级的功能，在当前主流的世界构建工具中普遍缺失或实现得不够用户友好。
+### **5.2 数据便携性与知识产权**
+
+- **数据导入/导出**：
+  - **导入**：为了方便用户从其他工具迁移，平台将提供一个用户友好的 CSV 导入流程。该流程将包括列映射、数据格式验证和错误预览等功能，以简化数据清洗过程 83。同时，我们还将为来自 Obsidian 的用户提供专门的 Markdown 批量导入工具。
+  - **导出**：用户必须能够在任何时候、以任何理由导出其世界的全部数据。我们将支持 Markdown、HTML 和 JSON 三种主流格式。导出文件将是一个结构化的 ZIP 压缩包，完整保留用户的目录结构和所有上传的媒体资源。这是对用户数据主权的承诺，也是对社区中普遍存在的“数据锁定”担忧的直接回应 85。
+- **知识产权政策**：
+  - 平台的服务条款将以最清晰、最明确的语言声明：**用户拥有其内容的全部所有权**。Worldloom 对用户的原创作品不主张任何所有权。授予平台的许可仅限于运营服务所必需的范围（例如，存储、显示和处理用户数据以便在平台内提供服务）。这一政策将完全看齐 Medium、Substack 等创作者友好型平台，建立用户对平台的长期信任 87。
+
+### **5.3 版本控制**
+
+- **需求**：平台内的每一个“元素”都将拥有完整的版本历史记录。系统会在用户编辑过程中自动保存更改快照。
+- **用户界面与体验**：版本历史界面的设计将借鉴 Google Docs 91 和 Figma 94 的成熟实践，为用户提供以下功能：
+  - **时间线视图**：清晰地展示所有历史版本的时间线，并标注每次修改的作者和时间。
+  - **差异对比**：提供一个“差异”（diff）视图，允许用户直观地比较任意两个版本之间的区别，新增内容和删除内容将以不同颜色高亮显示 96。
+  - **命名版本**：用户可以为重要的里程碑版本命名，例如“初稿完成版”或“编辑前版本”，以便快速查找。
+  - **一键恢复**：用户可以随时选择任何一个历史版本，并一键将其恢复为当前版本。
+- **价值**：这一功能为创作者提供了一个强大的安全网，尤其是在多人协作的环境中。它消除了用户对丢失工作或做出无法挽回的修改的恐惧，从而鼓励更大胆的创作和实验。这是一个专业级的功能，在当前主流的世界构建工具中普遍缺失或实现得不够用户友好。
 
 ---
 
-6.0 商业化模型
+## **6.0 商业化模型**
 
-本节阐述 Aetherium 的商业化战略。该战略旨在实现可持续的商业收入与建立庞大、活跃的用户社区之间的平衡，采用经过市场验证的 SaaS 混合模式。
-6.1 订阅层级
+本节阐述 Worldloom 的商业化战略。该战略旨在实现可持续的商业收入与建立庞大、活跃的用户社区之间的平衡，采用经过市场验证的 SaaS 混合模式。
 
-采用分层免费增值（Freemium）模型是进入该市场的最有效策略。它通过一个功能强大的免费版本来吸引广泛的用户，同时设计清晰的升级路径，将高价值用户转化为付费客户 ()。我们的订阅层级将围绕前述的用户画像需求进行设计。   
-表格：订阅层级与功能划分
+### **6.1 订阅层级**
 
-下表详细说明了各订阅层级的功能划分与定价策略。这一设计的核心逻辑是：免费版提供完整的核心创作体验，但限制规模与协作，以吸引业余爱好者；专业版解除个人创作的规模限制，服务于独立创作者；工作室版则解锁真正的团队协作功能，面向 TTRPG 团队和写作小组。这种划分精确地映射了用户画像的需求，并遵循了成熟的 SaaS 定价最佳实践 ()。   
-暂时无法在Lark文档外展示此内容
+采用分层免费增值（Freemium）模型是进入该市场的最有效策略。它通过一个功能强大的免费版本来吸引广泛的用户，同时设计清晰的升级路径，将高价值用户转化为付费客户 98。我们的订阅层级将围绕前述的用户画像需求进行设计。
 
-6.2 创作者市场
+#### **表格：订阅层级与功能划分**
 
-- 长期愿景：Aetherium 的长远目标是发展成为一个平台经济体，让创作者能够通过他们的世界观直接获得收入。这将为平台构建一个强大且难以复制的护城河。
-- 实现路径：当前，Campfire 等平台已经开始涉足自出版领域 ()，而 Etsy 和 Shopify 等市场的成功则证明了交易费模式的可行性 ()。Aetherium 可以融合这两种模式。任何“专业版”或“工作室版”的用户都可以选择将其世界的部分或全部内容设置为付费订阅。   
-- 功能：
+下表详细说明了各订阅层级的功能划分与定价策略。这一设计的核心逻辑是：免费版提供完整的核心创作体验，但限制规模与协作，以吸引业余爱好者；专业版解除个人创作的规模限制，服务于独立创作者；工作室版则解锁真正的团队协作功能，面向 TTRPG 团队和写作小组。这种划分精确地映射了用户画像的需求，并遵循了成熟的 SaaS 定价最佳实践 101。
+
+| 功能  | 免费版 (业余爱好者) | 专业版 (小说架构师) | 工作室版 (大师级叙事者) |
+| --- | --- | --- | --- |
+| **价格** | 免费  | 约 $10/月 | 约 $25/用户/月 |
+| **私密世界数量** | 1个  | 无限  | 无限  |
+| **“元素”数量** | 200个上限 | 无限  | 无限  |
+| **存储空间** | 1 GB | 10 GB | 每用户 50 GB |
+| **核心工具 (编辑器, 地图, 时间线等)** | ✅   | ✅   | ✅   |
+| **双向链接与块引用** | ✅   | ✅   | ✅   |
+| **实时协作** | ❌   | ❌   | ✅   |
+| **协作者/世界** | 2名查看者 | 5名查看者 | 无限编辑者/查看者 |
+| **精细化权限与“秘密”功能** | ❌   | ✅   | ✅   |
+| **版本历史** | 7天  | 30天 | 无限  |
+| **高级导出选项 (JSON)** | ❌   | ✅   | ✅   |
+| **优先支持** | ❌   | ✅   | ✅   |
+| **管理与安全工具 (SSO)** | ❌   | ❌   | ✅   |
+
+### **6.2 创作者市场**
+
+- **长期愿景**：Worldloom 的长远目标是发展成为一个平台经济体，让创作者能够通过他们的世界观直接获得收入。这将为平台构建一个强大且难以复制的护城河。
+- **实现路径**：当前，Campfire 等平台已经开始涉足自出版领域 104，而 Etsy 和 Shopify 等市场的成功则证明了交易费模式的可行性 106。Worldloom 可以融合这两种模式。任何“专业版”或“工作室版”的用户都可以选择将其世界的部分或全部内容设置为付费订阅。
+- **功能**：
   - 创作者可以为其世界设定一个面向粉丝或玩家的月度订阅价格（例如，TTRPG 玩家订阅以获取战役世界的最新动态，或小说读者订阅以访问数字版的设定集）。
-  - Aetherium 将通过集成 Stripe 等支付网关，处理所有支付和访问权限管理。
-  - 收入模型：平台将从创作者的所有收入中抽取一定比例的交易费（例如，10%）。这种模式将平台的商业成功与平台核心用户的成功紧密地绑定在一起，形成一个共生共荣的生态系统。
+  - Worldloom 将通过集成 Stripe 等支付网关，处理所有支付和访问权限管理。
+  - **收入模型**：平台将从创作者的所有收入中抽取一定比例的交易费（例如，10%）。这种模式将平台的商业成功与平台核心用户的成功紧密地绑定在一起，形成一个共生共荣的生态系统。
+
+#### **Works cited**
+
+1. FAQ \- Best Worldbuilding App for GMs \- LegendKeeper, accessed September 7, 2025, [https://www.legendkeeper.com/faq/](https://www.legendkeeper.com/faq/)
+2. LegendKeeper \- Worldbuilding tool and campaign manager for tabletop RPGs, accessed September 7, 2025, [https://www.legendkeeper.com/](https://www.legendkeeper.com/)
+3. World Anvil Review \[2025\]: Everything Need to Know \- Kindlepreneur, accessed September 7, 2025, [https://kindlepreneur.com/world-anvil/](https://kindlepreneur.com/world-anvil/)
+4. Campfire vs World Anvil: A Full Comparison of the Best Worldbuilding Tools \- Kindlepreneur, accessed September 7, 2025, [https://kindlepreneur.com/campfire-vs-world-anvil/](https://kindlepreneur.com/campfire-vs-world-anvil/)
+5. LegendKeeper vs WorldAnvil : r/worldbuilding \- Reddit, accessed September 7, 2025, [https://www.reddit.com/r/worldbuilding/comments/l0t98o/legendkeeper\_vs\_worldanvil/](https://www.reddit.com/r/worldbuilding/comments/l0t98o/legendkeeper_vs_worldanvil/)
+6. Worldbuilding with Obsidian \- organisation tips and plugins \- TJ Trewin, accessed September 7, 2025, [https://www.tjtrewin.com/blog/worldbuilding-with-obsidian](https://www.tjtrewin.com/blog/worldbuilding-with-obsidian)
+7. Obsidian \- Sharpen your thinking, accessed September 7, 2025, [https://obsidian.md/](https://obsidian.md/)
+8. Master Obsidian Worldbuilding in 30 Days: Complete Guide, accessed September 7, 2025, [https://obsidiantavern.com/obsidian-worldbuilding/](https://obsidiantavern.com/obsidian-worldbuilding/)
+9. Roam Research – A note taking tool for networked thought., accessed September 7, 2025, [https://roamresearch.com/](https://roamresearch.com/)
+10. Guild Membership Pricing \- World Anvil, accessed September 7, 2025, [https://www.worldanvil.com/pricing](https://www.worldanvil.com/pricing)
+11. Kismet Reviews World Anvil, accessed September 7, 2025, [https://www.dnd.kismetrose.com/DMWorldAnvil.html](https://www.dnd.kismetrose.com/DMWorldAnvil.html)
+12. Campfire Pro vs World Anvil? \- Steam Community, accessed September 7, 2025, [https://steamcommunity.com/app/965480/discussions/0/1648791520851441879/](https://steamcommunity.com/app/965480/discussions/0/1648791520851441879/)
+13. Campfire Pricing and Account Plans, accessed September 7, 2025, [https://www.campfirewriting.com/pricing](https://www.campfirewriting.com/pricing)
+14. Campfire Writing Review: The 17 Modules Explained \- selfpublishing.com, accessed September 7, 2025, [https://selfpublishing.com/campfire-writing-review/](https://selfpublishing.com/campfire-writing-review/)
+15. Campfire vs. World Anvil: Which is Best for You?, accessed September 7, 2025, [https://www.campfirewriting.com/learn/world-anvil-vs-campfire](https://www.campfirewriting.com/learn/world-anvil-vs-campfire)
+16. LegendKeeper or WorldAnvil? Which is best? : r/worldbuilding \- Reddit, accessed September 7, 2025, [https://www.reddit.com/r/worldbuilding/comments/i1yd2g/legendkeeper\_or\_worldanvil\_which\_is\_best/](https://www.reddit.com/r/worldbuilding/comments/i1yd2g/legendkeeper_or_worldanvil_which_is_best/)
+17. The Top Ten Best Worldbuilding Tools (Paid and FREE) \- Zainah Yousef, accessed September 7, 2025, [https://zainahyousef.com/the-top-best-worldbuilding-tools/](https://zainahyousef.com/the-top-best-worldbuilding-tools/)
+18. Campfire Write Review: Everything You Need to Know \- Reedsy Blog, accessed September 7, 2025, [https://blog.reedsy.com/guide/book-writing-software/campfire-write-review/](https://blog.reedsy.com/guide/book-writing-software/campfire-write-review/)
+19. Campfire Write Review \[2025\]: Worldbuilding Software for Authors \- Kindlepreneur, accessed September 7, 2025, [https://kindlepreneur.com/campfire-write-review/](https://kindlepreneur.com/campfire-write-review/)
+20. Legendkeeper vs Campfire: which worldbuilding tool should you choose?, accessed September 7, 2025, [https://www.legendkeeper.com/legendkeeper-vs-campfire/](https://www.legendkeeper.com/legendkeeper-vs-campfire/)
+21. Legend Keeper 2022 Overview \[OC\] : r/worldbuilding \- Reddit, accessed September 7, 2025, [https://www.reddit.com/r/worldbuilding/comments/vzxby1/legend\_keeper\_2022\_overview\_oc/](https://www.reddit.com/r/worldbuilding/comments/vzxby1/legend_keeper_2022_overview_oc/)
+22. Features \- Best Worldbuilding App for GMs | LegendKeeper, accessed September 7, 2025, [https://www.legendkeeper.com/features/](https://www.legendkeeper.com/features/)
+23. Legendkeeper vs World Anvil: which worldbuilding tool should you choose?, accessed September 7, 2025, [https://www.legendkeeper.com/world-anvil-alternative/](https://www.legendkeeper.com/world-anvil-alternative/)
+24. Notion Worldbuilding Template & Story Planner — Quill\&Steel, accessed September 7, 2025, [https://www.quillandsteel.com/workbooks/p/notion-worldbuilding-template](https://www.quillandsteel.com/workbooks/p/notion-worldbuilding-template)
+25. How to Structure Notion for Worldbuilding and Fiction Writing, accessed September 7, 2025, [https://www.quillandsteel.com/blog/structure-notion-for-worldbuilding-and-fiction-writing](https://www.quillandsteel.com/blog/structure-notion-for-worldbuilding-and-fiction-writing)
+26. Best app for Worldbuilding? \- Reddit, accessed September 7, 2025, [https://www.reddit.com/r/worldbuilding/comments/13h8p6o/best\_app\_for\_worldbuilding/](https://www.reddit.com/r/worldbuilding/comments/13h8p6o/best_app_for_worldbuilding/)
+27. Pricing \- Obsidian, accessed September 7, 2025, [https://obsidian.md/pricing](https://obsidian.md/pricing)
+28. Feature Guide to Manuscripts in Writing Knowledge Base \- World Anvil, accessed September 7, 2025, [https://www.worldanvil.com/learn/writing/manuscripts](https://www.worldanvil.com/learn/writing/manuscripts)
+29. Campfire: Read, Write, and Publish Books & Bonus Content, accessed September 7, 2025, [https://www.campfirewriting.com/write](https://www.campfirewriting.com/write)
+30. Intro to databases – Notion Help Center, accessed September 7, 2025, [https://www.notion.com/help/intro-to-databases](https://www.notion.com/help/intro-to-databases)
+31. Notion Pricing Plans: Free, Plus, Business, Enterprise, & AI., accessed September 7, 2025, [https://www.notion.com/pricing](https://www.notion.com/pricing)
+32. A Beginner's Guide to Roam Research — SitePoint, accessed September 7, 2025, [https://www.sitepoint.com/roam-research-beginners-guide/](https://www.sitepoint.com/roam-research-beginners-guide/)
+33. A Thorough Beginner's Guide to Roam Research \- The Sweet Setup, accessed September 7, 2025, [https://thesweetsetup.com/a-thorough-beginners-guide-to-roam-research/](https://thesweetsetup.com/a-thorough-beginners-guide-to-roam-research/)
+34. How to Embed Manuscripts in Your Articles \- World Anvil, accessed September 7, 2025, [https://www.worldanvil.com/learn/manuscripts-guides/embed-manuscripts](https://www.worldanvil.com/learn/manuscripts-guides/embed-manuscripts)
+35. Roaming through contexts with Roam: How I use it \- strategic structures, accessed September 7, 2025, [https://www.strategicstructures.com/?p=2357](https://www.strategicstructures.com/?p=2357)
+36. Full, complete Transclusion in block-level referencing \- Feature archive \- Obsidian Forum, accessed September 7, 2025, [https://forum.obsidian.md/t/full-complete-transclusion-in-block-level-referencing/15300](https://forum.obsidian.md/t/full-complete-transclusion-in-block-level-referencing/15300)
+37. Notion Database Views: Everything You Need To Know (2024) \- Landmark Labs, accessed September 7, 2025, [https://www.landmarklabs.co/insights/notion-database-views](https://www.landmarklabs.co/insights/notion-database-views)
+38. When to use each type of database view \- Notion, accessed September 7, 2025, [https://www.notion.com/help/guides/when-to-use-each-type-of-database-view](https://www.notion.com/help/guides/when-to-use-each-type-of-database-view)
+39. Views, filters, sorts & groups – Notion Help Center, accessed September 7, 2025, [https://www.notion.com/help/views-filters-and-sorts](https://www.notion.com/help/views-filters-and-sorts)
+40. Database views \- Notion Academy, accessed September 7, 2025, [https://www.notion.com/help/notion-academy/lesson/database-views-2](https://www.notion.com/help/notion-academy/lesson/database-views-2)
+41. Getting started with Airtable form views, accessed September 7, 2025, [https://support.airtable.com/v1/docs/getting-started-with-airtable-form-views](https://support.airtable.com/v1/docs/getting-started-with-airtable-form-views)
+42. Getting started with Airtable views, accessed September 7, 2025, [https://support.airtable.com/v1/docs/getting-started-with-airtable-views](https://support.airtable.com/v1/docs/getting-started-with-airtable-views)
+43. The complete guide to Airtable views: Unlock data multiverse \- Softr, accessed September 7, 2025, [https://www.softr.io/blog/airtable-views](https://www.softr.io/blog/airtable-views)
+44. View Basics \- Airtable Support, accessed September 7, 2025, [https://support.airtable.com/view-basics](https://support.airtable.com/view-basics)
+45. What are the differences between legendkeeper vs World anvil ? : r/WorldAnvil \- Reddit, accessed September 7, 2025, [https://www.reddit.com/r/WorldAnvil/comments/13i1a1g/what\_are\_the\_differences\_between\_legendkeeper\_vs/](https://www.reddit.com/r/WorldAnvil/comments/13i1a1g/what_are_the_differences_between_legendkeeper_vs/)
+46. How to link articles on World Anvil \- YouTube, accessed September 7, 2025, [https://www.youtube.com/watch?v=h1rb8jF09b0](https://www.youtube.com/watch?v=h1rb8jF09b0)
+47. A beginner's guide to Roam Research: gettings started in 5 easy steps \- Ness Labs, accessed September 7, 2025, [https://nesslabs.com/roam-research-beginner-guide](https://nesslabs.com/roam-research-beginner-guide)
+48. Worldbuilding | Free Craft Template \- Craft Docs, accessed September 7, 2025, [https://www.craft.do/templates/worldbuilding](https://www.craft.do/templates/worldbuilding)
+49. Worldbuilding Template: 101 Prompts to Build an Immersive World \- Kindlepreneur, accessed September 7, 2025, [https://kindlepreneur.com/worldbuilding-template/](https://kindlepreneur.com/worldbuilding-template/)
+50. World Building Template \- BuildIn.Ai, accessed September 7, 2025, [https://buildin.ai/templates/world-building-template](https://buildin.ai/templates/world-building-template)
+51. Worldbuilding Template Template by Casimir Montilla | Notion Marketplace, accessed September 7, 2025, [https://www.notion.com/templates/worldbuilding-template](https://www.notion.com/templates/worldbuilding-template)
+52. Worldbuilding Template \- Etsy, accessed September 7, 2025, [https://www.etsy.com/market/worldbuilding\_template](https://www.etsy.com/market/worldbuilding_template)
+53. Custom Book Writing Software for Science Fiction Authors \- Campfire, accessed September 7, 2025, [https://www.campfirewriting.com/write/sci-fi](https://www.campfirewriting.com/write/sci-fi)
+54. Optimizing Performance \- React, accessed September 7, 2025, [https://legacy.reactjs.org/docs/optimizing-performance.html](https://legacy.reactjs.org/docs/optimizing-performance.html)
+55. Performance \- React Flow, accessed September 7, 2025, [https://reactflow.dev/learn/advanced-use/performance](https://reactflow.dev/learn/advanced-use/performance)
+56. Overview \- React Flow, accessed September 7, 2025, [https://reactflow.dev/learn/layouting/layouting](https://reactflow.dev/learn/layouting/layouting)
+57. Obsidian, Genuinely the Best Free Program for WorldBuilding and How to Use it\! \- Reddit, accessed September 7, 2025, [https://www.reddit.com/r/worldbuilding/comments/zwe7gc/obsidian\_genuinely\_the\_best\_free\_program\_for/](https://www.reddit.com/r/worldbuilding/comments/zwe7gc/obsidian_genuinely_the_best_free_program_for/)
+58. Real-Time Document Collaboration—System Architecture and Design \- MDPI, accessed September 7, 2025, [https://www.mdpi.com/2076-3417/14/18/8356](https://www.mdpi.com/2076-3417/14/18/8356)
+59. javascript \- Real time collaborative editing \- how does it work? \- Stack Overflow, accessed September 7, 2025, [https://stackoverflow.com/questions/5086699/real-time-collaborative-editing-how-does-it-work](https://stackoverflow.com/questions/5086699/real-time-collaborative-editing-how-does-it-work)
+60. Real-time Collaboration: architecture – Make WordPress Core, accessed September 7, 2025, [https://make.wordpress.org/core/2023/07/13/real-time-collaboration-architecture/](https://make.wordpress.org/core/2023/07/13/real-time-collaboration-architecture/)
+61. Guide to sharing and permissions – Figma Learn \- Help Center, accessed September 7, 2025, [https://help.figma.com/hc/en-us/articles/1500007609322-Guide-to-sharing-and-permissions](https://help.figma.com/hc/en-us/articles/1500007609322-Guide-to-sharing-and-permissions)
+62. Team permissions – Figma Learn \- Help Center, accessed September 7, 2025, [https://help.figma.com/hc/en-us/articles/360039970673-Team-permissions](https://help.figma.com/hc/en-us/articles/360039970673-Team-permissions)
+63. Manage team permissions – Figma Learn \- Help Center, accessed September 7, 2025, [https://help.figma.com/hc/en-us/articles/360039485514-Manage-team-permissions](https://help.figma.com/hc/en-us/articles/360039485514-Manage-team-permissions)
+64. Sharing & permissions – Notion Help Center, accessed September 7, 2025, [https://www.notion.com/help/sharing-and-permissions](https://www.notion.com/help/sharing-and-permissions)
+65. Notion Sharing & Permissions: The Ultimate Guide \- Thomas Frank, accessed September 7, 2025, [https://thomasjfrank.com/notion-sharing-permissions-the-ultimate-guide/](https://thomasjfrank.com/notion-sharing-permissions-the-ultimate-guide/)
+66. Grant the right level of access with teamspaces and groups \- Notion, accessed September 7, 2025, [https://www.notion.com/help/guides/grant-access-teamspaces](https://www.notion.com/help/guides/grant-access-teamspaces)
+67. Open-source bounty \- Wikipedia, accessed September 7, 2025, [https://en.wikipedia.org/wiki/Open-source\_bounty](https://en.wikipedia.org/wiki/Open-source_bounty)
+68. Opire \- the bounty platform for software developers, accessed September 7, 2025, [https://opire.dev/](https://opire.dev/)
+69. Contributors Guide \- Hummingbot, accessed September 7, 2025, [https://hummingbot.org/bounties/contributors/](https://hummingbot.org/bounties/contributors/)
+70. Algora \- Hire the top 1% open source engineers, accessed September 7, 2025, [https://algora.io/](https://algora.io/)
+71. Bounties | Open Collective Docs, accessed September 7, 2025, [https://docs.opencollective.com/help/contributing/development/bounties](https://docs.opencollective.com/help/contributing/development/bounties)
+72. Understanding the git fork and pull request workflow \- Graphite, accessed September 7, 2025, [https://graphite.dev/guides/understanding-git-fork-pull-request-workflow](https://graphite.dev/guides/understanding-git-fork-pull-request-workflow)
+73. Forking Workflow | Atlassian Git Tutorial, accessed September 7, 2025, [https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+74. How Duolingo uses gamification to improve user retention (+ 5 winning tactics) \- StriveCloud, accessed September 7, 2025, [https://strivecloud.io/blog/gamification-examples-boost-user-retention-duolingo/](https://strivecloud.io/blog/gamification-examples-boost-user-retention-duolingo/)
+75. How Does Duolingo Onboard Users? \- YouTube, accessed September 7, 2025, [https://www.youtube.com/watch?v=YlxKIi2QgtE](https://www.youtube.com/watch?v=YlxKIi2QgtE)
+76. 6 user onboarding best practices \[with examples and video\] \- Appcues, accessed September 7, 2025, [https://www.appcues.com/blog/user-onboarding-best-practices](https://www.appcues.com/blog/user-onboarding-best-practices)
+77. User Onboarding Best Practices, Examples, Metrics & Tools \- Userpilot, accessed September 7, 2025, [https://userpilot.com/blog/user-onboarding/](https://userpilot.com/blog/user-onboarding/)
+78. Duolingo's delightful user onboarding experience—personalization, gamification, and a friendly mascot \- GoodUX, accessed September 7, 2025, [https://goodux.appcues.com/blog/duolingo-user-onboarding](https://goodux.appcues.com/blog/duolingo-user-onboarding)
+79. 10 Onboarding gamification tools to engage your new hires \- SC Training, accessed September 7, 2025, [https://training.safetyculture.com/blog/onboarding-gamification/](https://training.safetyculture.com/blog/onboarding-gamification/)
+80. 11 Onboarding Gamification Examples to Engage & Retain Users, accessed September 7, 2025, [https://userpilot.com/blog/onboarding-gamification/](https://userpilot.com/blog/onboarding-gamification/)
+81. UX Gamification for SaaS: How to Boost User Engagement \- Userpilot, accessed September 7, 2025, [https://userpilot.com/blog/gamification-ux/](https://userpilot.com/blog/gamification-ux/)
+82. Duolingo onboarding: Product feature case study | by Ketaki Vaidya (she/her) | Medium, accessed September 7, 2025, [https://kittuvaidyakv.medium.com/duolingo-onboarding-product-feature-case-study-804e597a19f9](https://kittuvaidyakv.medium.com/duolingo-onboarding-product-feature-case-study-804e597a19f9)
+83. What are the best practices for high volume data import? \- Oracle Help Center, accessed September 7, 2025, [https://docs.oracle.com/en/cloud/saas/sales/fasqa/best-practices-for-high-volume-data-import.html](https://docs.oracle.com/en/cloud/saas/sales/fasqa/best-practices-for-high-volume-data-import.html)
+84. 5 Best Practices for Building a CSV Uploader \- OneSchema, accessed September 7, 2025, [https://www.oneschema.co/blog/building-a-csv-uploader](https://www.oneschema.co/blog/building-a-csv-uploader)
+85. Community Suggestion: Print out or export of articles \- World Anvil, accessed September 7, 2025, [https://www.worldanvil.com/community/voting/suggestion/20e8c78e-c171-4280-8556-356052d48a35/view](https://www.worldanvil.com/community/voting/suggestion/20e8c78e-c171-4280-8556-356052d48a35/view)
+86. Are we moving away from portability? How much is Obsidian locking our notes in?, accessed September 7, 2025, [https://forum.obsidian.md/t/are-we-moving-away-from-portability-how-much-is-obsidian-locking-our-notes-in/19329](https://forum.obsidian.md/t/are-we-moving-away-from-portability-how-much-is-obsidian-locking-our-notes-in/19329)
+87. Copyright | World Anvil, accessed September 7, 2025, [https://www.worldanvil.com/copyright](https://www.worldanvil.com/copyright)
+88. Does Medium Own Your Content? \- Stopping Internet Marketing Scams, accessed September 7, 2025, [https://stoppingscams.com/does-medium-own-your-content/](https://stoppingscams.com/does-medium-own-your-content/)
+89. Clarifying Medium's new Terms of Service | by Medium | The Medium Blog, accessed September 7, 2025, [https://medium.com/blog/clarifying-mediums-new-terms-of-service-bad566e3f7da](https://medium.com/blog/clarifying-mediums-new-terms-of-service-bad566e3f7da)
+90. medium.com, accessed September 7, 2025, [https://medium.com/the-shortform/do-you-own-your-content-on-substack-3c5dc6aa2160\#:\~:text=Any%20original%20content%20you%20post,enable%20us%20to%20operate%20Substack.](https://medium.com/the-shortform/do-you-own-your-content-on-substack-3c5dc6aa2160#:~:text=Any%20original%20content%20you%20post,enable%20us%20to%20operate%20Substack.)
+91. How to use Google Docs Version History \- ZDNET, accessed September 7, 2025, [https://www.zdnet.com/home-and-office/work-life/how-to-use-google-docs-version-history/](https://www.zdnet.com/home-and-office/work-life/how-to-use-google-docs-version-history/)
+92. Google Docs: Version History \- GCFGlobal, accessed September 7, 2025, [https://edu.gcfglobal.org/en/googledocuments/version-history/1/](https://edu.gcfglobal.org/en/googledocuments/version-history/1/)
+93. Find what's changed in a file \- Computer \- Google Docs Editors Help, accessed September 7, 2025, [https://support.google.com/docs/answer/190843?hl=en\&co=GENIE.Platform%3DDesktop](https://support.google.com/docs/answer/190843?hl=en&co=GENIE.Platform%3DDesktop)
+94. Learn Figma Version History: How to Track and Restore Changes \- Codefinity, accessed September 7, 2025, [https://codefinity.com/courses/v2/f9b355ab-23dd-4d38-a615-a41b6685d244/ad7a2d17-e6de-4a05-8c68-4c364f45732d/260377d6-92f8-4665-8e6e-416148e23e90](https://codefinity.com/courses/v2/f9b355ab-23dd-4d38-a615-a41b6685d244/ad7a2d17-e6de-4a05-8c68-4c364f45732d/260377d6-92f8-4665-8e6e-416148e23e90)
+95. View a file's version history \- Figma Help Center, accessed September 7, 2025, [https://help.figma.com/hc/en-us/articles/360038006754-View-a-file-s-version-history](https://help.figma.com/hc/en-us/articles/360038006754-View-a-file-s-version-history)
+96. DiffDog Diff/Merge Tool \- Altova, accessed September 7, 2025, [https://www.altova.com/diffdog](https://www.altova.com/diffdog)
+97. Compare Files with 'Diff Doc' \- Softinterface, accessed September 7, 2025, [https://www.softinterface.com/MD/Document-Comparison-Software.htm](https://www.softinterface.com/MD/Document-Comparison-Software.htm)
+98. How to Set Up a SaaS Freemium Model \- PayPro Global, accessed September 7, 2025, [https://payproglobal.com/how-to/set-up-saas-freemium/](https://payproglobal.com/how-to/set-up-saas-freemium/)
+99. Freemium: Definition, Best Practices, Benefits and Examples \- Zuora, accessed September 7, 2025, [https://www.zuora.com/glossary/freemium-business-model/](https://www.zuora.com/glossary/freemium-business-model/)
+100. Freemium Business Model: benefits, drawbacks, and best practices \- Fincome, accessed September 7, 2025, [https://www.fincome.co/blog/freemium-business-model-benefits-drawbacks-best-practices](https://www.fincome.co/blog/freemium-business-model-benefits-drawbacks-best-practices)
+101. An Overview Of SaaS Pricing Models \- BillingPlatform, accessed September 7, 2025, [https://billingplatform.com/blog/an-overview-of-saas-pricing-models](https://billingplatform.com/blog/an-overview-of-saas-pricing-models)
+102. 7 SaaS Pricing Models Explained From A to Z \- Eleken, accessed September 7, 2025, [https://www.eleken.co/blog-posts/saas-pricing-models-to-help-you-make-an-informed-decision](https://www.eleken.co/blog-posts/saas-pricing-models-to-help-you-make-an-informed-decision)
+103. SaaS Tiered Billing & Three-Tier Pricing Strategy Guide \- Maxio, accessed September 7, 2025, [https://www.maxio.com/blog/tiered-pricing-examples-for-saas-businesses](https://www.maxio.com/blog/tiered-pricing-examples-for-saas-businesses)
+104. Selling Your Books on Campfire, accessed September 7, 2025, [https://www.campfirewriting.com/learn/how-monetization-works](https://www.campfirewriting.com/learn/how-monetization-works)
+105. The Publishing Program \- Campfire, accessed September 7, 2025, [https://www.campfirewriting.com/learn/publishing-program-tutorial](https://www.campfirewriting.com/learn/publishing-program-tutorial)
+106. Transaction Fee Models \- Meegle, accessed September 7, 2025, [https://www.meegle.com/en\_us/topics/monetization-models/transaction-fee-models](https://www.meegle.com/en_us/topics/monetization-models/transaction-fee-models)
+107. Understanding Transaction Fees in Online Marketplaces \- Edge Payments, accessed September 7, 2025, [https://www.tryedge.io/blog/transaction-fees-online-marketplaces](https://www.tryedge.io/blog/transaction-fees-online-marketplaces)
+108. Marketplace Fees 2025: Amazon, eBay, Etsy, Walmart Charges Explained \- Webgility, accessed September 7, 2025, [https://www.webgility.com/blog/marketplace-fees-amazon-ebay-etsy-walmart](https://www.webgility.com/blog/marketplace-fees-amazon-ebay-etsy-walmart)
