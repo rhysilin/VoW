@@ -1,0 +1,386 @@
+openapi: 3.0.3
+info:
+  title: Aetherium API
+  version: 0.2.0
+  description: 核心实体与操作的初版契约（与 MVP 对齐）。
+servers:
+  - url: https://api.example.com
+security:
+  - bearerAuth: []
+paths:
+  /worlds:
+    get:
+      summary: 列出世界
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/World'
+                  page:
+                    type: integer
+                  page_size:
+                    type: integer
+    post:
+      summary: 创建世界
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorldCreate'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/World'
+  /worlds/{id}:
+    get:
+      summary: 获取世界详情
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/World'
+    put:
+      summary: 更新世界
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorldUpdate'
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: 删除世界
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '204':
+          description: No Content
+
+  /elements:
+    get:
+      summary: 列出元素
+      parameters:
+        - in: query
+          name: world_id
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: q
+          schema:
+            type: string
+          description: 搜索关键字
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Element'
+    post:
+      summary: 创建元素
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ElementCreate'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Element'
+
+  /elements/{id}:
+    get:
+      summary: 获取元素
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Element'
+    put:
+      summary: 更新元素
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ElementUpdate'
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: 删除元素
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '204':
+          description: No Content
+
+  /relations:
+    post:
+      summary: 创建关系
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RelationCreate'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Relation'
+    get:
+      summary: 列出关系（按世界）
+      parameters:
+        - in: query
+          name: world_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Relation'
+  /relations/{id}:
+    delete:
+      summary: 删除关系
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '204':
+          description: No Content
+
+  /maps:
+    post:
+      summary: 创建地图记录（使用预签名直传）
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MapCreate'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Map'
+  /maps/{id}/pins:
+    post:
+      summary: 在地图上放置图钉
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MapPinCreate'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapPin'
+
+  /worlds/{id}/export:
+    post:
+      summary: 触发导出世界（异步）
+      parameters:
+        - $ref: '#/components/parameters/Id'
+      responses:
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportJob'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    Id:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    Page:
+      in: query
+      name: page
+      schema:
+        type: integer
+        minimum: 1
+      required: false
+    PageSize:
+      in: query
+      name: page_size
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+      required: false
+  schemas:
+    Error:
+      type: object
+      properties:
+        code: { type: string }
+        message: { type: string }
+        request_id: { type: string }
+
+    World:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        description: { type: string }
+        visibility: { type: string, enum: [private, public] }
+        created_at: { type: string, format: date-time }
+    WorldCreate:
+      type: object
+      required: [name]
+      properties:
+        name: { type: string }
+        description: { type: string }
+        visibility: { type: string, enum: [private, public] }
+    WorldUpdate:
+      type: object
+      properties:
+        name: { type: string }
+        description: { type: string }
+        visibility: { type: string, enum: [private, public] }
+
+    Element:
+      type: object
+      properties:
+        id: { type: string }
+        world_id: { type: string }
+        title: { type: string }
+        content_json:
+          type: object
+          description: ProseMirror JSON
+        properties:
+          type: object
+          additionalProperties: true
+        created_at: { type: string, format: date-time }
+    ElementCreate:
+      type: object
+      required: [world_id, title, content_json]
+      properties:
+        world_id: { type: string }
+        title: { type: string }
+        content_json: { type: object }
+        properties: { type: object }
+    ElementUpdate:
+      type: object
+      properties:
+        title: { type: string }
+        content_json: { type: object }
+        properties: { type: object }
+
+    Relation:
+      type: object
+      properties:
+        id: { type: string }
+        world_id: { type: string }
+        from_element: { type: string }
+        to_element: { type: string }
+        type: { type: string }
+    RelationCreate:
+      type: object
+      required: [world_id, from_element, to_element, type]
+      properties:
+        world_id: { type: string }
+        from_element: { type: string }
+        to_element: { type: string }
+        type: { type: string }
+
+    Map:
+      type: object
+      properties:
+        id: { type: string }
+        world_id: { type: string }
+        name: { type: string }
+        image_url: { type: string }
+        image_size_mb: { type: number }
+    MapCreate:
+      type: object
+      required: [world_id, image_url]
+      properties:
+        world_id: { type: string }
+        name: { type: string }
+        image_url: { type: string }
+        image_size_mb: { type: number }
+    MapPin:
+      type: object
+      properties:
+        id: { type: string }
+        map_id: { type: string }
+        element_id: { type: string }
+        x: { type: number }
+        y: { type: number }
+        label: { type: string }
+    MapPinCreate:
+      type: object
+      required: [map_id, x, y]
+      properties:
+        map_id: { type: string }
+        element_id: { type: string }
+        x: { type: number, minimum: 0, maximum: 1 }
+        y: { type: number, minimum: 0, maximum: 1 }
+        label: { type: string }
+
+    ExportJob:
+      type: object
+      properties:
+        id: { type: string }
+        world_id: { type: string }
+        status: { type: string, enum: [pending, running, done, failed] }
+        result_url: { type: string }
+        created_at: { type: string, format: date-time }
